@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>イベントアンケートフォーム</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>イベントアンケートフォーム</h1>
+    <div id="progress-bar-container">
+      <div id="progress-bar"></div>
+    </div>
+    <form id="survey-form">
+      <!-- 質問1: 学籍番号 -->
+      <div class="question" id="question-1">
+        <label for="student-id">学籍番号:</label>
+        <input type="text" id="student-id" name="student-id" required>
+        <div class="button-row">
+          <button type="button" class="next-btn">次へ</button>
+        </div>
+      </div>
+      <!-- 質問2: 満足度 -->
+      <div class="question" id="question-2">
+        <label>満足度（5段階評価）:</label>
+        <div class="rating">
+          <input type="radio" id="satisfaction-1" name="satisfaction" value="1" required><label for="satisfaction-1">1</label>
+          <input type="radio" id="satisfaction-2" name="satisfaction" value="2"><label for="satisfaction-2">2</label>
+          <input type="radio" id="satisfaction-3" name="satisfaction" value="3"><label for="satisfaction-3">3</label>
+          <input type="radio" id="satisfaction-4" name="satisfaction" value="4"><label for="satisfaction-4">4</label>
+          <input type="radio" id="satisfaction-5" name="satisfaction" value="5"><label for="satisfaction-5">5</label>
+        </div>
+        <div class="button-row">
+          <button type="button" class="back-btn">戻る</button>
+          <button type="button" class="next-btn">次へ</button>
+        </div>
+      </div>
+      <!-- 質問3: 最も興味のある内容 -->
+      <div class="question" id="question-3">
+        <label for="interest">最も興味のある内容:</label>
+        <textarea id="interest" name="interest" rows="3" required></textarea>
+        <div class="button-row">
+          <button type="button" class="back-btn">戻る</button>
+          <button type="button" class="next-btn">次へ</button>
+        </div>
+      </div>
+      <!-- 質問4: 話したい先輩 -->
+      <div class="question" id="question-4">
+        <label>話したいと思う先輩はいましたか？</label>
+        <div id="senpai-list">
+          <!-- JavaScriptで専攻ごとにリストを生成 -->
+        </div>
+        <div class="button-row">
+          <button type="button" class="back-btn">戻る</button>
+          <button type="button" class="next-btn">次へ</button>
+        </div>
+      </div>
+      <!-- 質問5: ディスカッションスペース参加 -->
+      <div class="question" id="question-5">
+        <label>この後のディスカッションスペースへは参加しますか？</label>
+        <div id="discussion-choices"></div>
+        <div class="button-row">
+          <button type="button" class="back-btn">戻る</button>
+          <button type="button" class="next-btn">次へ</button>
+        </div>
+      </div>
+      <!-- 質問6: MediColle実行委員会に興味 -->
+      <div class="question" id="question-6">
+        <label>MediColle実行委員会に興味ありませんか？</label>
+        <div id="committee-choices"></div>
+        <div class="button-row">
+          <button type="button" class="back-btn">戻る</button>
+          <button type="button" class="next-btn">次へ</button>
+        </div>
+      </div>
+      <!-- 質問7: 質問欄 -->
+      <div class="question" id="question-7">
+        <label for="question-to">宛先:</label>
+        <select id="question-to" name="question-to">
+          <option value="">選択してください</option>
+          <option value="all">全体</option>
+          <option value="senpai">名指し</option>
+          <option value="major">○○専攻の方へ</option>
+        </select>
+        <label for="question-content">質問内容:</label>
+        <textarea id="question-content" name="question-content" rows="3"></textarea>
+        <div class="button-row">
+          <button type="button" class="back-btn">戻る</button>
+          <button type="submit" class="submit-btn">送信</button>
+        </div>
+      </div>
+    </form>
+    <div id="thanks-message" style="display:none;">
+      <h2>ご回答ありがとうございました！</h2>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html> 
