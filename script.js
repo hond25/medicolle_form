@@ -156,5 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('survey-form').style.display = 'none';
     document.getElementById('progress-bar').style.width = '100%';
     document.getElementById('thanks-message').style.display = 'block';
+    document.getElementById('event-announcement').style.display = 'block';
   });
 }); 
