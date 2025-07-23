@@ -1,5 +1,6 @@
 body {
-  font-family: 'Segoe UI', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  font-family: "Segoe UI", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Meiryo,
+    sans-serif;
   background: linear-gradient(135deg, #f7fafd 0%, #e9ecef 100%);
   margin: 0;
   padding: 0;
@@ -10,7 +11,7 @@ body {
   margin: 40px auto;
   background: #fff;
   border-radius: 24px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
   padding: 32px 20px 24px 20px;
   min-height: 60vh;
   box-sizing: border-box;
@@ -52,7 +53,9 @@ label {
   font-size: 1em;
   color: #444;
 }
-input[type="text"], textarea, select {
+input[type="text"],
+textarea,
+select {
   width: 100%;
   padding: 12px;
   border: 1.5px solid #e0e6ed;
@@ -63,7 +66,9 @@ input[type="text"], textarea, select {
   background: #f7fafd;
   transition: border 0.2s;
 }
-input[type="text"]:focus, textarea:focus, select:focus {
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
   border: 1.5px solid #4f8cff;
   outline: none;
 }
@@ -75,7 +80,7 @@ input[type="text"]:focus, textarea:focus, select:focus {
 }
 .rating label {
   font-weight: normal;
-  margin: 0 2px 0 0;
+  margin: 0 6px 0 0;
   background: #f7fafd;
   border-radius: 50%;
   width: 36px;
@@ -86,32 +91,9 @@ input[type="text"]:focus, textarea:focus, select:focus {
   border: 1.5px solid #e0e6ed;
   cursor: pointer;
   transition: background 0.2s, border 0.2s;
+  user-select: none;
 }
 .rating input[type="radio"]:checked + label {
-  background: #4f8cff;
-  color: #fff;
-  border: 1.5px solid #4f8cff;
-}
-#thanks-message {
-  text-align: center;
-  margin-top: 32px;
-}
-.senpai-group {
-  margin-bottom: 12px;
-}
-.senpai-group label {
-  margin-right: 8px;
-  font-weight: normal;
-  background: #f7fafd;
-  border-radius: 24px;
-  padding: 8px 18px;
-  border: 1.5px solid #e0e6ed;
-  cursor: pointer;
-  transition: background 0.2s, border 0.2s;
-  display: inline-block;
-  margin-bottom: 8px;
-}
-.senpai-group input[type="checkbox"]:checked + label {
   background: #4f8cff;
   color: #fff;
   border: 1.5px solid #4f8cff;
@@ -122,7 +104,9 @@ input[type="text"]:focus, textarea:focus, select:focus {
   gap: 16px;
   margin-top: 8px;
 }
-button.back-btn, button.next-btn, button.submit-btn {
+button.back-btn,
+button.next-btn,
+button.submit-btn {
   min-width: 100px;
   max-width: 100%;
   flex: 1 1 0;
@@ -138,14 +122,17 @@ button.back-btn, button.next-btn, button.submit-btn {
   background: #f7fafd;
   color: #4f8cff;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(79,140,255,0.08);
+  box-shadow: 0 2px 8px rgba(79, 140, 255, 0.08);
   margin: 0;
+  user-select: none;
 }
-button.next-btn, button.submit-btn {
+button.next-btn,
+button.submit-btn {
   background: #4f8cff;
   color: #fff;
 }
-button.next-btn:hover, button.submit-btn:hover {
+button.next-btn:hover,
+button.submit-btn:hover {
   background: #357ae8;
   color: #fff;
 }
@@ -156,35 +143,20 @@ button.back-btn {
 button.back-btn:hover {
   background: #bfc9d1;
 }
-input[type="radio"], input[type="checkbox"] {
+input[type="radio"] {
   display: none;
 }
-label.choice,
-#senpai-list label,
-#committee-list label {
-  margin-right: 8px;
-  font-weight: normal;
-  background: #f7fafd;
-  border-radius: 24px;
-  padding: 8px 18px;
-  border: 1.5px solid #e0e6ed;
-  cursor: pointer;
-  transition: background 0.2s, border 0.2s;
-  display: inline-block;
-  margin-bottom: 8px;
+.notice {
+  font-size: 0.95em;
+  color: #666;
+  margin-bottom: 12px;
 }
-label.choice:has(input:checked),
-#senpai-list label:has(input:checked),
-#committee-list label:has(input:checked) {
-  background: #4f8cff;
-  color: #fff;
-  border: 1.5px solid #4f8cff;
-}
+
 @media (min-width: 480px) {
   .container {
     max-width: 420px;
     border-radius: 24px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
     padding: 40px 32px 32px 32px;
     margin: 40px auto;
   }
@@ -194,8 +166,10 @@ label.choice:has(input:checked),
   .button-row {
     gap: 16px;
   }
-  button.back-btn, button.next-btn, button.submit-btn {
+  button.back-btn,
+  button.next-btn,
+  button.submit-btn {
     max-width: 100%;
     font-size: 1.1em;
   }
-} 
+}
