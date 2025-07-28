@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>イベントアンケートフォーム</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>イベントアンケートフォーム</h1>
+    <div id="progress-bar-container">
+      <div id="progress-bar"></div>
+    </div>
+
+    <div class="notice">
+      QR掲示場所: コミュニケーションスペース各所・大ホール入り口・スライド上
+    </div>
+    <div class="notice" style="margin-bottom:20px;">
+      当日のタイムテーブル:
+      <a href="timetable.jpg" target="_blank" rel="noopener noreferrer">画像はこちら</a>
+      </div>
+
+    <form id="survey-form" novalidate>
+      <div class="question" id="question-1">
+        <label for="student-id">学籍番号:</label>
+        <input
+          type="text"
+          id="student-id"
+          name="student-id"
+          maxlength="7"
+          pattern="[0-9A-Za-z]{7}"
+          required
+          placeholder="例: 000A000"
+          autocomplete="off"
+        />
+        <div class="button-row">
+          <button type="button" class="next-btn">次へ</button>
+        </div>
+      </div>
+
+      <div class="question" id="question-2">
+        <label for="session-number">登壇で印象に残ったセッションナンバー:</label>
+        <select id="session-number" name="session-number" required>
+          <option value="">選択してください</option>
+          <option value="1">セッション1</option>
+          <option value="2">セッション2</option>
+          <option value="3">セッション3</option>
+          <option value="4">セッション4</option>
+        </select>
+        <label for="session-reason">理由・感想：</label>
+        <textarea id="session-reason" name="session-reason" rows="3" required></textarea>
+        <div class="button-row">
+          <button type="button" class="back-btn">戻る</button>
+          <button type="button" class="next-btn">次へ</button>
+        </div>
+      </div>
+
+      <div class="question" id="question-3">
+        <label for="work-number">コミュニケーションスペースで印象に残った作品ナンバー:</label>
+        <select id="work-number" name="work-number" required>
+          <option value="">選択してください</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          </select>
+        <div class="button-row">
+          <button type="button" class="back-btn">戻る</button>
+          <button type="button" class="next-btn">次へ</button>
+        </div>
+      </div>
+
+      <div class="question" id="question-4">
+        <label for="interest-major">どの専攻が気になっているか？:</label>
+        <select id="interest-major" name="interest-major" required>
+          <option value="">選択してください</option>
+          <option value="media-innovation">メディアイノベーション</option>
+          <option value="media-design">メディアデザイン</option>
+          <option value="media-communication">メディアコミュニケーション</option>
+          <option value="music-media">音楽メディア</option>
+          </select>
+        <div class="button-row">
+          <button type="button" class="back-btn">戻る</button>
+          <button type="button" class="next-btn">次へ</button>
+        </div>
+      </div>
+
+      <div class="question" id="question-5">
+        <label>MediColleイベントの満足度（5段階評価）:</label>
+        <div class="rating">
+          <input type="radio" id="satisfaction-1" name="satisfaction" value="1" required />
+          <label for="satisfaction-1">1</label>
+          <input type="radio" id="satisfaction-2" name="satisfaction" value="2" />
+          <label for="satisfaction-2">2</label>
+          <input type="radio" id="satisfaction-3" name="satisfaction" value="3" />
+          <label for="satisfaction-3">3</label>
+          <input type="radio" id="satisfaction-4" name="satisfaction" value="4" />
+          <label for="satisfaction-4">4</label>
+          <input type="radio" id="satisfaction-5" name="satisfaction" value="5" />
+          <label for="satisfaction-5">5</label>
+        </div>
+        <div class="button-row">
+          <button type="button" class="back-btn">戻る</button>
+          <button type="button" class="next-btn">次へ</button>
+        </div>
+      </div>
+
+      <div class="question" id="question-6">
+        <label for="free-comment">イベント全体の感想・ご意見（任意）:</label>
+        <textarea id="free-comment" name="free-comment" rows="3"></textarea>
+        <div class="button-row">
+          <button type="button" class="back-btn">戻る</button>
+          <button type="button" class="next-btn">次へ</button>
+        </div>
+      </div>
+
+      <div class="question" id="question-7">
+        <label for="venue-atmosphere">会場の雰囲気（任意・自由記述）:</label>
+        <textarea id="venue-atmosphere" name="venue-atmosphere" rows="2"></textarea>
+        <div class="button-row">
+          <button type="button" class="back-btn">戻る</button>
+          <button type="button" class="next-btn">次へ</button>
+        </div>
+      </div>
+
+      <div class="question" id="question-8">
+        <label for="improvement">改善点・要望（任意・自由記述）:</label>
+        <textarea id="improvement" name="improvement" rows="2"></textarea>
+        <div class="button-row">
+          <button type="button" class="back-btn">戻る</button>
+          <button type="button" class="next-btn">次へ</button>
+        </div>
+      </div>
+
+      <div class="question" id="question-9">
+        <label for="prize-idea">レクイベントの景品は何がいい？（任意・自由記述）:</label>
+        <textarea id="prize-idea" name="prize-idea" rows="2"></textarea>
+        <div class="button-row">
+          <button type="button" class="back-btn">戻る</button>
+          <button type="submit" class="submit-btn">送信</button>
+        </div>
+      </div>
+    </form>
+
+    <div id="thanks-message" style="display:none; text-align:center; margin-top:32px;">
+      <h2>ご回答ありがとうございました！</h2>
+    </div>
+
+    <div
+      id="event-announcement"
+      style="
+        display: none;
+        margin-top: 32px;
+        padding: 24px;
+        border: 2px solid #4caf50;
+        border-radius: 8px;
+        background: #f9fff9;
+      "
+    >
+      <h2>レクリエーションイベントのお知らせ</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li><strong>日時：</strong>○月○日（○） ○:00～○:00</li>
+        <li><strong>場所：</strong>3号館201室</li>
+        <li><strong>内容：</strong>スポーツ大会・景品あり</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
