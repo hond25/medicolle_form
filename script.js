@@ -142,6 +142,17 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("必須項目を正しく入力してください。");
       return;
     }
+    
+    // 送信ボタンを無効化
+    const submitBtn = document.querySelector(".submit-btn");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "送信中...";
+    submitBtn.style.opacity = "0.6";
+    submitBtn.style.cursor = "not-allowed";
+    
+    // ローディングスピナーを表示
+    document.getElementById("loading-spinner").style.display = "block";
+    
     const form = e.target;
     const formData = new FormData(form);
     const params = new URLSearchParams();
@@ -158,6 +169,10 @@ document.addEventListener("DOMContentLoaded", () => {
       mode: 'no-cors'
     })
     .then(response => {
+      // ローディングスピナーを非表示
+      document.getElementById("loading-spinner").style.display = "none";
+      
+      // フォームを非表示にしてthanksメッセージを表示
       document.getElementById("survey-form").style.display = "none";
       document.getElementById("progress-bar").style.width = "100%";
       document.getElementById("thanks-message").style.display = "block";
@@ -165,6 +180,16 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(error => {
       console.error("Error!", error.message);
+      
+      // エラー時はボタンを元に戻す
+      submitBtn.disabled = false;
+      submitBtn.textContent = "送信";
+      submitBtn.style.opacity = "1";
+      submitBtn.style.cursor = "pointer";
+      
+      // ローディングスピナーを非表示
+      document.getElementById("loading-spinner").style.display = "none";
+      
       alert("送信中にエラーが発生しました。もう一度お試しください。");
     });
   });
