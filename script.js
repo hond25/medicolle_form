@@ -8,16 +8,16 @@ function doPost(e) {
     rowData.push(e.parameter["session-number"]);
     rowData.push(e.parameter["session-reason"]);
     rowData.push(e.parameter["work-number"]);
+    rowData.push(e.parameter["work-reason"]);
     rowData.push(e.parameter["interest-major"]);
     rowData.push(e.parameter["satisfaction"]);
     rowData.push(e.parameter["free-comment"]);
     rowData.push(e.parameter["venue-atmosphere"]);
     rowData.push(e.parameter["improvement"]);
-    rowData.push(e.parameter["prize-idea"]);
     sheet.appendRow(rowData);
     return ContentService.createTextOutput("Success");
   }
-const TOTAL_QUESTIONS = 9;
+const TOTAL_QUESTIONS = 8;
 let currentQuestion = 1;
 
 // 質問表示切替
@@ -40,12 +40,23 @@ function updateProgressBar(index) {
   document.getElementById("progress-bar").style.width = percent + "%";
 }
 
-// 学籍番号入力の自動大文字化・半角英数字のみ許容
+// 学籍番号入力の自動大文字化・4文字目以外数字、4文字目だけ大文字アルファベット
 document.addEventListener("DOMContentLoaded", () => {
   const studentIdInput = document.getElementById("student-id");
   if (studentIdInput) {
     studentIdInput.addEventListener("input", function () {
-      this.value = this.value.replace(/[^a-zA-Z0-9]/g, "").toUpperCase();
+      let v = this.value.toUpperCase();
+      let arr = v.split("");
+      for (let i = 0; i < arr.length; i++) {
+        if (i === 3) {
+          // 4文字目はA-Zのみ
+          arr[i] = arr[i].replace(/[^A-Z]/g, "");
+        } else {
+          // それ以外は0-9のみ
+          arr[i] = arr[i].replace(/[^0-9]/g, "");
+        }
+      }
+      this.value = arr.join("");
     });
   }
 });
@@ -60,7 +71,8 @@ function validateCurrentQuestionInputs(container) {
         `input[name="${el.name}"]:checked`
       );
       if (el.required && !checked) return false;
-    } else if (!el.checkValidity()) {
+    } else if (el.required && !el.checkValidity()) {
+      // 必須項目のみバリデーション
       return false;
     }
   }
@@ -159,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (const pair of formData.entries()) {
       params.append(pair[0], pair[1]);
     }
-    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzwCrnJIupHiddKRBpmu0CgThagi_1tty-qf26pPSEERdQyvW7L83rcawqVyix0tHJi/exec';
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx1jHz8cXkfGWsGEM-kbCHPCVh-Qh2Kc6yqkxzobVJAFogkolwHQ2A5gEMm2FK3lOr2/exec';
     fetch(WEB_APP_URL, {
       method: 'POST',
       body: params.toString(),

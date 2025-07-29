@@ -188,3 +188,31 @@ body {
       font-size: 1.1em;
     }
   }
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+/* 専攻（.radio-group）は普通のラジオボタン */
+.radio-group input[type="radio"] {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+}
+
+/* 満足度（.rating）はカスタムUIでラジオボタン非表示 */
+.rating input[type="radio"] {
+  display: none;
+}
