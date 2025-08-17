@@ -8,29 +8,26 @@
 </head>
 <body>
   <div class="container">
+    <div class="header">
+      <button type="button" id="header-back-btn" class="header-back-btn">＜</button>
+      <div class="header-logo">MediColle</div>
+    </div>
+
     <h1>イベントアンケートフォーム</h1>
     <div id="progress-bar-container">
       <div id="progress-bar"></div>
     </div>
 
-    <div class="notice">
-      QR掲示場所: コミュニケーションスペース各所・大ホール入り口・スライド上
-    </div>
-    <div class="notice" style="margin-bottom:20px;">
-      当日のタイムテーブル:
-      <a href="timetable.jpg" target="_blank" rel="noopener noreferrer">画像はこちら</a>
-      </div>
-
     <form id="survey-form" novalidate>
       <div class="question" id="question-1">
-        <label for="student-id">学籍番号:</label>
+        <label for="student-id">あなたの学籍番号を教えて下さい。</label>
         <input
           type="text"
           id="student-id"
           name="student-id"
           maxlength="7"
           required
-          placeholder="例: 000A000"
+          placeholder="例: 000T000"
           autocomplete="off"
         />
         <div class="button-row">
@@ -39,7 +36,7 @@
       </div>
 
       <div class="question" id="question-2">
-        <label for="session-number">登壇で印象に残ったセッションナンバー:</label>
+        <label for="session-number">登壇で印象に残ったセッションナンバーを入力してください</label>
         <select id="session-number" name="session-number" required>
           <option value="">選択してください</option>
           <option value="1">セッション1</option>
@@ -50,13 +47,12 @@
         <label for="session-reason">理由・感想：</label>
         <textarea id="session-reason" name="session-reason" rows="3" required></textarea>
         <div class="button-row">
-          <button type="button" class="back-btn">戻る</button>
           <button type="button" class="next-btn">次へ</button>
         </div>
       </div>
 
       <div class="question" id="question-3">
-        <label for="work-number">コミュニケーションスペースで印象に残った作品ナンバー:</label>
+        <label for="work-number">コミュニケーションスペースで印象に残った作品ナンバーを入力してください</label>
         <select id="work-number" name="work-number" required>
           <option value="">選択してください</option>
           <option value="A">A</option>
@@ -66,13 +62,12 @@
         <label for="work-reason">理由・感想：</label>
         <textarea id="work-reason" name="work-reason" rows="3" required></textarea>
         <div class="button-row">
-          <button type="button" class="back-btn">戻る</button>
           <button type="button" class="next-btn">次へ</button>
         </div>
       </div>
 
       <div class="question" id="question-4">
-        <label>気になっている専攻を選んでください。</label>
+        <label>あなたが気になっている専攻を選んでください。</label>
         <div class="radio-group" id="interest-major-group">
           <label><input type="radio" name="interest-major" value="media-innovation" required>メディアイノベーション</label>
           <label><input type="radio" name="interest-major" value="media-design">メディアデザイン</label>
@@ -80,13 +75,12 @@
           <label><input type="radio" name="interest-major" value="music-media">音楽メディア</label>
         </div>
         <div class="button-row">
-          <button type="button" class="back-btn">戻る</button>
           <button type="button" class="next-btn">次へ</button>
         </div>
       </div>
 
       <div class="question" id="question-5">
-        <label>MediColleイベントの満足度（5段階評価）:</label>
+        <label>MediColleイベントの満足度（5段階評価）を教えてください</label>
         <div class="rating">
           <input type="radio" id="satisfaction-1" name="satisfaction" value="1" required />
           <label for="satisfaction-1">1</label>
@@ -100,40 +94,39 @@
           <label for="satisfaction-5">5</label>
         </div>
         <div class="button-row">
-          <button type="button" class="back-btn">戻る</button>
           <button type="button" class="next-btn">次へ</button>
         </div>
       </div>
 
       <div class="question" id="question-6">
-        <label for="free-comment">イベント全体の感想・ご意見（任意）:</label>
+        <label for="free-comment">イベント全体の感想・ご意見があれば教えてください</label>
         <textarea id="free-comment" name="free-comment" rows="3"></textarea>
         <div class="button-row">
-          <button type="button" class="back-btn">戻る</button>
           <button type="button" class="next-btn">次へ</button>
         </div>
       </div>
 
       <div class="question" id="question-7">
-        <label for="venue-atmosphere">会場の雰囲気（任意・自由記述）:</label>
+        <label for="venue-atmosphere">会場の雰囲気の感想・ご意見があれば教えてください</label>
         <textarea id="venue-atmosphere" name="venue-atmosphere" rows="2"></textarea>
         <div class="button-row">
-          <button type="button" class="back-btn">戻る</button>
           <button type="button" class="next-btn">次へ</button>
         </div>
       </div>
 
       <div class="question" id="question-8">
-        <label for="improvement">改善点・要望（任意・自由記述）:</label>
+        <label for="improvement">改善点・要望があれば教えてください</label>
         <textarea id="improvement" name="improvement" rows="2"></textarea>
         <div class="button-row">
-          <button type="button" class="back-btn">戻る</button>
           <button type="submit" class="submit-btn">送信</button>
         </div>
       </div>
-
-      <!-- question-9（レクイベントの景品）は削除 -->
     </form>
+
+    <div class="timetable-link">
+      当日のタイムテーブル:
+      <a href="timetable.jpg" target="_blank" rel="noopener noreferrer">画像はこちら</a>
+    </div>
 
     <div id="loading-spinner" style="display:none; text-align:center; margin-top:32px;">
       <div class="spinner"></div>
