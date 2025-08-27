@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&display=swap');
+
 body {
-  font-family: "Segoe UI", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Meiryo,
-    sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   background: #FFFFFF;
   margin: 0;
   padding: 0;
@@ -17,13 +18,14 @@ body {
   box-shadow: none;
   padding: 16px;
   box-sizing: border-box;
+  padding-bottom: 160px;
 }
 .header {
   display: flex;
   align-items: center;
   position: relative;
   height: 40px;
-  margin-bottom: 24px;
+  /* margin-bottom: 8px; */
 }
 .header-back-btn {
   position: absolute;
@@ -41,25 +43,26 @@ body {
   display: none; /* JSで制御 */
 }
 .header-logo {
-  font-size: 1.8em;
+  font-size: 24px;
   font-weight: bold;
-  color: rgba(244, 132, 91, 1);
+  color: #F4845B;
   text-align: center;
   width: 100%;
 }
 h1 {
   text-align: center;
-  margin-bottom: 24px;
-  font-size: 1.3em;
-  font-weight: 600;
-  color: #333;
+  margin-top: 44px;
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #756F6E;
 }
 #progress-bar-container {
   width: 100%;
   background: #EAEAEA;
   border-radius: 8px;
   height: 8px;
-  margin-bottom: 32px;
+  margin-bottom: 46px;
   overflow: hidden;
 }
 #progress-bar {
@@ -78,10 +81,10 @@ h1 {
   display: flex;
 }
 label {
-  font-weight: 600;
+  font-weight: medium;
   margin-bottom: 0;
-  font-size: 1em;
-  color: #444;
+  font-size: 18px;
+  color: #756F6E;
 }
 input[type="text"],
 textarea,
@@ -111,10 +114,10 @@ select:focus {
 }
 .rating label {
   font-weight: normal;
-  font-size: 1.1em;
+  font-size: 18px;
   margin: 0;
   background: #fff;
-  color: #555;
+  color: #756F6E;
   border-radius: 50%;
   width: 44px;
   height: 44px;
@@ -130,7 +133,6 @@ select:focus {
   background: rgba(244, 132, 91, 1);
   color: #fff;
   border-color: rgba(244, 132, 91, 1);
-  /* 内側に白い縁を追加してデザインを再現 */
   box-shadow: inset 0 0 0 2px #fff;
 }
 .button-row {
@@ -139,6 +141,21 @@ select:focus {
   gap: 16px;
   margin-top: 24px;
 }
+
+.question.active .button-row {
+  position: fixed;
+  bottom: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 400px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  z-index: 10;
+  box-shadow: 0 0 0 1px #FFFFFF; /* ← この行を追加 */
+}
+
 button.next-btn,
 button.submit-btn {
   width: 100%;
@@ -146,7 +163,7 @@ button.submit-btn {
   text-align: center;
   display: inline-block;
   padding: 16px 0;
-  font-size: 1.1em;
+  font-size: 20px;
   border-radius: 50px;
   border: none;
   cursor: pointer;
@@ -154,26 +171,32 @@ button.submit-btn {
   box-sizing: border-box;
   font-weight: 600;
   user-select: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  background: rgba(244, 132, 91, 1);
+  background: #F4845B;
   color: #fff;
 }
 button.next-btn:hover,
 button.submit-btn:hover {
-  background: rgba(244, 132, 91, 1);
+  background: #F4845B;
 }
 input[type="radio"] {
   display: none;
 }
 .timetable-link {
-    margin-top: 24px;
-    text-align: center;
-    font-size: 0.95em;
-    color: #555;
+  position: fixed;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: #FFFFFF;
+  margin-top: 24px;
+  text-align: center;
+  font-size: 0.95em;
+  color: #756F6E;
+  z-index: 10;
 }
 .timetable-link a {
-    color: rgbargba(244, 132, 91, 1);
-    font-weight: 500;
+  color: rgbargba(244, 132, 91, 1);
+  font-weight: 500;
 }
 .spinner {
   width: 40px;
