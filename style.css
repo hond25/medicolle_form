@@ -144,14 +144,14 @@ select:focus {
 
 .question.active .button-row {
   position: fixed;
-  bottom: 160px;
+  bottom: 120px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   max-width: 400px;
   padding: 0 20px;
   box-sizing: border-box;
-  background: #FFFFFF; /*エラーでる*/
+  background: #FFFFFF;
   z-index: 10;
   box-shadow: 0 0 0 1px #FFFFFF; /* ← この行を追加 */
 }
@@ -183,7 +183,7 @@ input[type="radio"] {
 }
 .timetable-link {
   position: fixed;
-  bottom: 100px;
+  bottom: 60px;
   left: 0;
   right: 0;
   padding: 20px;
