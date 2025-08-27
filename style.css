@@ -151,7 +151,7 @@ select:focus {
   max-width: 400px;
   padding: 0 20px;
   box-sizing: border-box;
-  background: #FFFFFF;
+  background: #FFFFFF; /*エラーでる*/
   z-index: 10;
   box-shadow: 0 0 0 1px #FFFFFF; /* ← この行を追加 */
 }
