@@ -6,19 +6,25 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
+  height: 100vh; /* 変更：画面全体の高さに固定 */
+  flex-direction: column; /* 追加：要素を縦に並べる */
+  /* min-height, justify-content, align-items は不要になったため削除 */
 }
 .container {
   max-width: 400px;
   width: 100%;
-  margin: 20px;
+  margin: 20px auto; /* 変更：上下に余白、左右は中央揃え */
   background: none;
   box-shadow: none;
   padding: 16px;
   box-sizing: border-box;
   padding-bottom: 160px;
+
+  /* ▼▼▼ 以下を追加 ▼▼▼ */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 .header {
   display: flex;
@@ -72,6 +78,14 @@ h1 {
   border-radius: 8px;
   transition: width 0.3s;
 }
+
+/* ▼▼▼ 以下を新規追加 ▼▼▼ */
+#survey-form {
+  flex-grow: 1;
+  overflow-y: auto; /* 内容が多ければ、このエリア内だけ縦スクロールを許可 */
+  min-height: 0;
+}
+
 .question {
   display: none;
   flex-direction: column;
@@ -153,7 +167,7 @@ select:focus {
   box-sizing: border-box;
   background: #FFFFFF;
   z-index: 10;
-  box-shadow: 0 0 0 1px #FFFFFF; /* ← この行を追加 */
+  box-shadow: 0 0 0 1px #FFFFFF;
 }
 
 button.next-btn,
@@ -226,7 +240,7 @@ input[type="radio"] {
   font-weight: normal;
 }
 .radio-group input[type="radio"] {
-  appearance: none; /* ブラウザのデフォルトスタイルを消す */
+  appearance: none;
   -webkit-appearance: none;
   display: inline-block;
   width: 20px;
@@ -234,7 +248,7 @@ input[type="radio"] {
   margin: 0;
   margin-right: 12px;
   padding: 2px;
-  background-clip: content-box; /* パディングの内側を背景描画エリアにする */
+  background-clip: content-box;
   border: 2px solid #CED4DA;
   border-radius: 50%;
   background-color: #fff;
@@ -246,5 +260,4 @@ input[type="radio"] {
 }
 .rating input[type="radio"] {
   display: none;
-
 }
