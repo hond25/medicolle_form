@@ -108,6 +108,8 @@ document.addEventListener("DOMContentLoaded", () => {
       
       // ▼▼▼ ここを追記 ▼▼▼
       headerBackBtn.style.display = "none";
+      document.querySelector("h1").style.display = "none";
+      document.querySelector(".timetable-link").style.display = "none";
     })
     .catch(error => {
       console.error("送信エラー:", error);
