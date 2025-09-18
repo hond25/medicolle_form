@@ -105,6 +105,9 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("progress-bar-container").style.display = "none";
       document.getElementById("thanks-message").style.display = "block";
       document.getElementById("event-announcement").style.display = "block";
+      
+      // ▼▼▼ ここを追記 ▼▼▼
+      headerBackBtn.style.display = "none";
     })
     .catch(error => {
       console.error("送信エラー:", error);
@@ -141,3 +144,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // 初期表示
   showQuestion(currentQuestion);
 });
+
+
+
+
+
+

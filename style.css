@@ -261,3 +261,8 @@ input[type="radio"] {
 .rating input[type="radio"] {
   display: none;
 }
+#event-announcement img {
+  width: 100%;
+  height: auto;
+  display: block; /* 画像の下にできる余分なスペースを防ぎます */
+}
